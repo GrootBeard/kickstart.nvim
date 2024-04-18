@@ -1,5 +1,5 @@
-require 'lua.settings'
-require 'lua.keymaps'
+require 'settings'
+require 'keymaps'
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
