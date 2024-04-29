@@ -28,3 +28,12 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Comment
+vim.keymap.set('n', '<leader>k', function()
+  require('Comment.api').toggle.linewise.current()
+end, { desc = 'Comment Toggle' })
+
+vim.keymap.set('v', '<leader>k', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = 'Comment Toggle' })
+
+vim.keymap.set('n', 'gH', vim.lsp.buf.hover, { desc = 'Hover information' })
