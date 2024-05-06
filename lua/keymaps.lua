@@ -37,3 +37,5 @@ end, { desc = 'Comment Toggle' })
 vim.keymap.set('v', '<leader>k', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = 'Comment Toggle' })
 
 vim.keymap.set('n', 'gH', vim.lsp.buf.hover, { desc = 'Hover information' })
+
+vim.keymap.set('n', '<leader>mf', 'ofmt.Printf("%v\\n", f)<esc>0f"a', { noremap = true, desc = 'Insert Print[f]' })
