@@ -46,3 +46,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+
+vim.keymap.set('n', '<leader>k', function()
+  require('Comment.api').toggle.linewise.current()
+end, { desc = 'Comment Toggle' })
+
+vim.keymap.set('v', '<leader>k', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = 'Comment Toggle' })
+
+vim.keymap.set('n', 'gH', vim.lsp.buf.hover, { desc = 'Hover information' })
+
+vim.keymap.set('n', '<leader>mf', 'ofmt.Printf("%v\\n", f)<esc>0f"a', { noremap = true, desc = 'Insert Print[f]' })
